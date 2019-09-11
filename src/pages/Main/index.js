@@ -30,11 +30,14 @@ export default class Main extends Component {
     }).isRequired,
   };
 
-  state = {
-    newUser: '',
-    users: [],
-    loading: false,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      newUser: '',
+      users: [],
+      loading: false,
+    };
+  }
 
   async componentDidMount() {
     const users = await AsyncStorage.getItem('users');
